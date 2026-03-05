@@ -14,5 +14,9 @@
     include './styles/components/Navbar.php';
      ?>
     
+    <?php 
+    include './styles/components/AddQueue.php';
+     ?>
+    
 </body>
 </html>

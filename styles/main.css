@@ -52,3 +52,63 @@ body {
 .container {
     padding-left: 15rem;
 }
+
+.bgForm {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    z-index: 1000;
+    /* opacity: 30%; */
+}
+.exitX{
+    position: absolute;
+    left: 650px;
+    right: 0;
+}
+.formQueue {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #ffffff;
+    width: 700px;
+}
+.serviceSelect{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.checkBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+}
+.nameSurname {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.ButtonForm {
+    width: 100%;
+    height: 50px;
+    padding: 2px;
+    border: 2px solid #154c88;
+    background-color: #0056b3;
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+.ButtonForm:hover {
+    background-color: #154c88;
+    cursor: pointer;
+    transform: scale(1.01);
+}
