@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2026 at 08:05 PM
+-- Generation Time: Mar 06, 2026 at 07:56 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,7 +40,42 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`id`, `customerName`, `customerSurname`, `customerPhone`) VALUES
 (1, 'กุเอง', 'แหละ', '0949843969'),
-(2, 'Panyapon', 'Sookparnee', '1122334451');
+(2, 'Panyapon', 'Sookparnee', '1122334451'),
+(3, 'kampan', 'x', '7573563943'),
+(4, 'kampan', 'x', '7573563943'),
+(5, 'kampanps', 'x', '2215152324'),
+(6, 'kampanps', 'x', '2215152324'),
+(7, 'Panyapons', 'Sookparnees', '323232'),
+(8, 'P4NZ', 'แหละ', '0989890889'),
+(9, 'P4NZ', 'แหละ', '0989890889'),
+(10, 'P4NZ', 'x', '21323'),
+(11, 'Panyapon', 'Sookparnee', '21323232'),
+(12, 'Panyapon', 'Sookparnee', '21323232'),
+(13, 'Panyapon', 'Sookparnee', '21323232'),
+(14, 'KP', 'x', '23145214'),
+(15, 'KP', 'x', '23145214'),
+(16, 'KP', 'x', '23145214'),
+(17, 'kampanps', 'Sookparnee', '0989879678'),
+(18, 'kampanps', 'Sookparnee', '0989879678'),
+(19, 'kampanps', 'Sookparnee', '0989879678'),
+(20, 'kampanps', 'Sookparnee', '0989879678'),
+(21, 'kampanps', 'Sookparnee', '0989879678'),
+(22, 'kampanps', 'Sookparnee', '0989879678'),
+(23, 'kampanps', 'Sookparnee', '0989879678'),
+(24, 'kampanps', 'Sookparnee', '1234567'),
+(25, 'kampanps', 'Sookparnee', '1234567'),
+(26, 'kampanps', 'Sookparnee', '1234567'),
+(27, 'P4NZ', 'x', '123454214'),
+(28, 'P4NZ', 'x', '123454214'),
+(29, 'P4NZ', 'x', '123454214'),
+(30, 'kampanps', 'Sookparnees', '21355'),
+(31, 'kampanps', 'Sookparnees', '21355'),
+(32, 'kampanps', 'Sookparnees', '21355'),
+(33, 'kampanps', 'Sookparnees', '21355'),
+(34, 'kampanps', 'Sookparnees', '21355'),
+(35, 'kampanps', 'Sookparnees', '21355'),
+(36, 'kampanps', 'Sookparnees', '21355'),
+(37, 'kampanps', 'Sookparnees', '21355');
 
 -- --------------------------------------------------------
 
@@ -93,16 +128,43 @@ CREATE TABLE `orders` (
   `carType` int(11) DEFAULT NULL,
   `modelCar` varchar(255) DEFAULT NULL,
   `orderDate` date DEFAULT NULL,
-  `employeeId` int(11) DEFAULT NULL
+  `employeeId` int(11) DEFAULT NULL,
+  `statusId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `customerId`, `carType`, `modelCar`, `orderDate`, `employeeId`) VALUES
-(1, NULL, NULL, 'ซิ่ง 251', NULL, NULL),
-(2, NULL, NULL, '4', NULL, NULL);
+INSERT INTO `orders` (`id`, `customerId`, `carType`, `modelCar`, `orderDate`, `employeeId`, `statusId`) VALUES
+(1, NULL, NULL, 'ซิ่ง 251', NULL, NULL, NULL),
+(2, NULL, NULL, '4', NULL, NULL, NULL),
+(6, 1, 1, '1', '0000-00-00', 1, NULL),
+(7, 7, 1, '3', '2026-03-06', 1, NULL),
+(8, 8, 1, '', '2026-03-06', 1, NULL),
+(9, 9, 1, '', '2026-03-06', 1, NULL),
+(10, 10, 1, '', '2026-03-06', 1, NULL),
+(11, 11, 1, 'colora 223', '2026-03-06', 1, NULL),
+(14, 14, 6, 'colora 223', '2026-03-06', 1, NULL),
+(15, 15, 6, 'colora 223', '2026-03-06', 1, NULL),
+(16, 16, 6, 'colora 223', '2026-03-06', 1, NULL),
+(17, 17, 4, 'colora 223', '2026-03-07', 1, NULL),
+(18, 21, 4, 'colora 223', '2026-03-07', 1, NULL),
+(19, 22, 4, 'colora 223', '2026-03-07', 1, NULL),
+(20, 23, 4, 'colora 223', '2026-03-07', 1, NULL),
+(22, 25, 1, 'colora 223', '2026-03-07', 1, NULL),
+(23, 26, 1, 'colora 223', '2026-03-07', 1, NULL),
+(24, 27, 4, 'colora 223', '2026-03-07', 1, NULL),
+(25, 28, 4, 'colora 223', '2026-03-07', 1, NULL),
+(26, 29, 4, 'colora 223', '2026-03-07', 1, 1),
+(27, 30, 1, '', '2026-03-07', 1, 1),
+(28, 31, 1, '', '2026-03-07', 1, 1),
+(29, 32, 1, '', '2026-03-07', 1, 1),
+(30, 33, 1, '', '2026-03-07', 1, 1),
+(31, 34, 1, '', '2026-03-07', 1, 1),
+(32, 35, 1, '', '2026-03-07', 1, 1),
+(33, 36, 3, 'colora 223', '2026-03-07', 1, 1),
+(34, 37, 3, 'colora 223', '2026-03-07', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -112,10 +174,57 @@ INSERT INTO `orders` (`id`, `customerId`, `carType`, `modelCar`, `orderDate`, `e
 
 CREATE TABLE `orders_detail` (
   `id` int(11) NOT NULL,
-  `serviceDetail` varchar(255) DEFAULT NULL,
   `serviceTypeid` varchar(4) DEFAULT NULL,
   `orderId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders_detail`
+--
+
+INSERT INTO `orders_detail` (`id`, `serviceTypeid`, `orderId`) VALUES
+(9, '0001', 24),
+(10, '0003', 24),
+(11, '0001', 25),
+(12, '0003', 25),
+(13, '0001', 26),
+(14, '0003', 26),
+(15, '0009', 27),
+(16, '0015', 27),
+(17, '0017', 27),
+(18, '0019', 27),
+(19, '0009', 28),
+(20, '0015', 28),
+(21, '0017', 28),
+(22, '0019', 28),
+(23, '0009', 29),
+(24, '0015', 29),
+(25, '0017', 29),
+(26, '0019', 29),
+(27, '0009', 30),
+(28, '0015', 30),
+(29, '0017', 30),
+(30, '0019', 30),
+(31, '0009', 31),
+(32, '0015', 31),
+(33, '0017', 31),
+(34, '0019', 31),
+(35, '0009', 32),
+(36, '0015', 32),
+(37, '0017', 32),
+(38, '0019', 32),
+(39, '0006', 33),
+(40, '0007', 33),
+(41, '0008', 33),
+(42, '0011', 33),
+(43, '0013', 33),
+(44, '0014', 33),
+(45, '0006', 34),
+(46, '0007', 34),
+(47, '0008', 34),
+(48, '0011', 34),
+(49, '0013', 34),
+(50, '0014', 34);
 
 -- --------------------------------------------------------
 
@@ -131,6 +240,18 @@ CREATE TABLE `payment` (
   `payDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `orderId`, `amount`, `payMethod`, `payDate`) VALUES
+(1, 28, 0.00, 1, '2026-03-07'),
+(2, 29, 0.00, 1, '2026-03-07'),
+(3, 30, 0.00, 1, '2026-03-07'),
+(4, 31, 0.00, 1, '2026-03-07'),
+(5, 34, 6500.00, 1, '2026-03-07'),
+(6, 34, 6500.00, 2, '2026-03-07');
+
 -- --------------------------------------------------------
 
 --
@@ -141,6 +262,14 @@ CREATE TABLE `payment_method` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `payment_method`
+--
+
+INSERT INTO `payment_method` (`id`, `name`) VALUES
+(1, 'แสกนจ่าย'),
+(2, 'เงินสด');
 
 -- --------------------------------------------------------
 
@@ -159,9 +288,9 @@ CREATE TABLE `role` (
 --
 
 INSERT INTO `role` (`id`, `name`, `salary`) VALUES
-(1, 'ผู้จัดการ', NULL),
-(2, 'พนักงานล้างรถ', NULL),
-(3, 'แคชเชียร์', NULL);
+(1, 'ผู้จัดการ', 2500.00),
+(2, 'พนักงานล้างรถ', 3500.00),
+(3, 'แคชเชียร์', 4500.00);
 
 -- --------------------------------------------------------
 
@@ -180,26 +309,47 @@ CREATE TABLE `servicetype` (
 --
 
 INSERT INTO `servicetype` (`servicetypeId`, `servicetypeName`, `servicetypePrice`) VALUES
-('0001', 'ล้างสีดูดฝุ่น', '฿250'),
-('0002', 'เคลือบแก้ว', '฿3500'),
-('0003', 'ดูดฝุ่นภายใน', '฿200'),
-('0004', 'ขัดสีรถ', '฿1200'),
-('0005', 'เคลือบสี', '฿800'),
-('0006', 'ล้างห้องเครื่อง', '฿500'),
-('0007', 'เคลือบเบาะหนัง', '฿700'),
-('0008', 'อบโอโซนฆ่าเชื้อ', '฿300'),
-('0009', 'ล้างรถด่วน', '฿100'),
-('0010', 'ล้างรถ + ดูดฝุ่น', '฿250'),
-('0011', 'เคลือบแก้วเต็มระบบ', '฿4500'),
-('0012', 'เคลือบกระจกกันน้ำ', '฿400'),
-('0013', 'เคลือบยางรถ', '฿150'),
-('0014', 'เคลือบพลาสติกภายนอก', '฿350'),
-('0015', 'ขัดลบรอยขีดข่วน', '฿900'),
-('0016', 'ขัดเคลือบสีพรีเมียม', '฿1800'),
-('0017', 'ซักพรมภายในรถ', '฿600'),
-('0018', 'ซักเบาะผ้า', '฿700'),
-('0019', 'ทำความสะอาดคอนโซล', '฿300'),
-('0020', 'เคลือบไฟหน้า', '฿500');
+('0001', 'ล้างสีดูดฝุ่น', '250'),
+('0002', 'เคลือบแก้ว', '3500'),
+('0003', 'ดูดฝุ่นภายใน', '200'),
+('0004', 'ขัดสีรถ', '1200'),
+('0005', 'เคลือบสี', '800'),
+('0006', 'ล้างห้องเครื่อง', '500'),
+('0007', 'เคลือบเบาะหนัง', '700'),
+('0008', 'อบโอโซนฆ่าเชื้อ', '300'),
+('0009', 'ล้างรถด่วน', '100'),
+('0010', 'ล้างรถ + ดูดฝุ่น', '250'),
+('0011', 'เคลือบแก้วเต็มระบบ', '4500'),
+('0012', 'เคลือบกระจกกันน้ำ', '400'),
+('0013', 'เคลือบยางรถ', '150'),
+('0014', 'เคลือบพลาสติกภายนอก', '350'),
+('0015', 'ขัดลบรอยขีดข่วน', '900'),
+('0016', 'ขัดเคลือบสีพรีเมียม', '1800'),
+('0017', 'ซักพรมภายในรถ', '600'),
+('0018', 'ซักเบาะผ้า', '700'),
+('0019', 'ทำความสะอาดคอนโซล', '300'),
+('0020', 'เคลือบไฟหน้า', '500');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status`
+--
+
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `name`) VALUES
+(1, 'รอคิว'),
+(2, 'กำลังดำเนินการ'),
+(3, 'รอรับรถ'),
+(4, 'เสร็จสิ้น');
 
 -- --------------------------------------------------------
 
@@ -248,7 +398,8 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD KEY `customerId` (`customerId`),
   ADD KEY `carType` (`carType`),
-  ADD KEY `employeeId` (`employeeId`);
+  ADD KEY `employeeId` (`employeeId`),
+  ADD KEY `statusId` (`statusId`);
 
 --
 -- Indexes for table `orders_detail`
@@ -285,6 +436,12 @@ ALTER TABLE `servicetype`
   ADD PRIMARY KEY (`servicetypeId`);
 
 --
+-- Indexes for table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `type_car`
 --
 ALTER TABLE `type_car`
@@ -298,7 +455,7 @@ ALTER TABLE `type_car`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -310,31 +467,37 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `orders_detail`
 --
 ALTER TABLE `orders_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `payment_method`
 --
 ALTER TABLE `payment_method`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `status`
+--
+ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `type_car`
@@ -358,7 +521,8 @@ ALTER TABLE `employee`
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customerId`) REFERENCES `customer` (`id`),
   ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`carType`) REFERENCES `type_car` (`id`),
-  ADD CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`employeeId`) REFERENCES `employee` (`id`);
+  ADD CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`employeeId`) REFERENCES `employee` (`id`),
+  ADD CONSTRAINT `orders_ibfk_4` FOREIGN KEY (`statusId`) REFERENCES `status` (`id`);
 
 --
 -- Constraints for table `orders_detail`

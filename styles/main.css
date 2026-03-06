@@ -112,3 +112,26 @@ body {
     cursor: pointer;
     transform: scale(1.01);
 }
+
+.bgDashboard {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    z-index: 1000;
+    /* opacity: 30%; */
+}
+.firstBar {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+.firstBar-Layout {
+    border: 1px solid black;
+    color: white;
+    background-color: #0056b3;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}

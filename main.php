@@ -18,5 +18,8 @@
     include './styles/components/AddQueue.php';
      ?>
     
+    <?php
+    include './styles/components/Dashboard.php';
+    ?>
 </body>
 </html>
