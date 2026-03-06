@@ -23,18 +23,20 @@ $resultTypecar = mysqli_query($conn,$sqlTypecar);
         <input type="text" name="carPlate" placeholder=" กข 1234" style="border: 1px solid black; border-radius: 5px;">
         <p>ประเภทรถ</p>
         <select name='carType' id='carType' style="border: 1px solid black; border-radius: 5px;">
-        <?php
+            <?php
         while ($rs = mysqli_fetch_array($resultTypecar)) {
             echo"<option value='$rs[0]'>$rs[1]</option>";
             }
             ?>
         </select>
+        <p>รุ่นรถ</p>
+        <input type="text" name="modelCar" placeholder=" เวฟ 650" style="border: 1px solid black; border-radius: 5px;">
         <p>บริการ</p>
         <div class="serviceSelect">
                 <?php 
                 while($rs = mysqli_fetch_array($resultService)){
                     echo "<div class='checkBox'>";
-                    echo "<input type='checkbox' name='serviceList'>".$rs[1]."<br>";
+                    echo "<input type='checkbox' name='serviceList[]'>".$rs[1]."<br>";
                     echo "<p style='opacity:50%;'>".$rs[2]."</p>";
                     echo "</div>";
                 };
