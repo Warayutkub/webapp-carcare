@@ -3,12 +3,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    overflow-y: scroll;
 }
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #f4f4f4;
 }
 
 /* Button Styles */
@@ -135,3 +141,44 @@ body {
     padding: 10px;
     margin: 10px;
 }
+
+/* Fade In/Out Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-bg {
+    from {
+        background: none;
+    }
+    to {
+        background-color: white;
+    }
+}
+
+.animate-fade-in-bg {
+    animation: fade-in-bg 0.3s ease-in;
+}
+
+.animate-fade-in {
+    animation: fade-in 0.2s ease-in;
+}
+
+.animate-fade-out {
+    animation: fade-out 0.2s ease-out;
+}
+

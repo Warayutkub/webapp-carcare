@@ -19,23 +19,10 @@
             </div>
 
             <!-- Add Car Button -->
-            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors duration-200">
+            <a href="http://localhost/Carcare/views/AddQueue.php" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors duration-200">
                 <span class="font-bold text-lg ">+</span>
-                <span>เพิ่มรถใหม่</span>
-            </button>
+                <span>เพิ่มคิวใหม่</span>
+            </a>
         </div>
     </div>
 </nav>
-<div class="w-full px-4 px-[20rem]">
-    <div class="bg-gray-300 p-2 m-2 rounded-md w-fit flex gap-4">
-        <a href="#" >
-            Dashboard
-        </a>
-        <a href="#">
-            Queqe
-        </a>
-        <a href="#">
-            Service
-        </a>
-    </div>
-</div>
