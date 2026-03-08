@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2026 at 07:56 PM
+-- Generation Time: Mar 08, 2026 at 09:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -75,7 +75,20 @@ INSERT INTO `customer` (`id`, `customerName`, `customerSurname`, `customerPhone`
 (34, 'kampanps', 'Sookparnees', '21355'),
 (35, 'kampanps', 'Sookparnees', '21355'),
 (36, 'kampanps', 'Sookparnees', '21355'),
-(37, 'kampanps', 'Sookparnees', '21355');
+(37, 'kampanps', 'Sookparnees', '21355'),
+(38, 'วรายุทธ', 'ก', '117'),
+(39, 'วรายุทธ', 'ก', '117'),
+(40, 'วรายุทธ', 'ก', '117'),
+(41, 'วรายุทธ', 'ก', '117'),
+(42, 'วรายุทธ', 'ก', '117'),
+(43, 'วรายุทธ', 'ก', '117'),
+(44, 'วรายุทธ', 'ก', '117'),
+(45, 'วรายุทธ', 'ก', '117'),
+(46, 'วรายุทธ', 'ก', '117'),
+(47, 'วรายุทธ', 'ก', '117'),
+(48, 'วรายุทธ', 'ก', '117'),
+(49, 'วรายุทธ', 'ก', '117'),
+(50, 'วรายุทธ', 'บุญรัตนัง', '0631673569');
 
 -- --------------------------------------------------------
 
@@ -129,42 +142,20 @@ CREATE TABLE `orders` (
   `modelCar` varchar(255) DEFAULT NULL,
   `orderDate` date DEFAULT NULL,
   `employeeId` int(11) DEFAULT NULL,
-  `statusId` int(11) DEFAULT NULL
+  `statusId` int(11) DEFAULT NULL,
+  `license_plate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `customerId`, `carType`, `modelCar`, `orderDate`, `employeeId`, `statusId`) VALUES
-(1, NULL, NULL, 'ซิ่ง 251', NULL, NULL, NULL),
-(2, NULL, NULL, '4', NULL, NULL, NULL),
-(6, 1, 1, '1', '0000-00-00', 1, NULL),
-(7, 7, 1, '3', '2026-03-06', 1, NULL),
-(8, 8, 1, '', '2026-03-06', 1, NULL),
-(9, 9, 1, '', '2026-03-06', 1, NULL),
-(10, 10, 1, '', '2026-03-06', 1, NULL),
-(11, 11, 1, 'colora 223', '2026-03-06', 1, NULL),
-(14, 14, 6, 'colora 223', '2026-03-06', 1, NULL),
-(15, 15, 6, 'colora 223', '2026-03-06', 1, NULL),
-(16, 16, 6, 'colora 223', '2026-03-06', 1, NULL),
-(17, 17, 4, 'colora 223', '2026-03-07', 1, NULL),
-(18, 21, 4, 'colora 223', '2026-03-07', 1, NULL),
-(19, 22, 4, 'colora 223', '2026-03-07', 1, NULL),
-(20, 23, 4, 'colora 223', '2026-03-07', 1, NULL),
-(22, 25, 1, 'colora 223', '2026-03-07', 1, NULL),
-(23, 26, 1, 'colora 223', '2026-03-07', 1, NULL),
-(24, 27, 4, 'colora 223', '2026-03-07', 1, NULL),
-(25, 28, 4, 'colora 223', '2026-03-07', 1, NULL),
-(26, 29, 4, 'colora 223', '2026-03-07', 1, 1),
-(27, 30, 1, '', '2026-03-07', 1, 1),
-(28, 31, 1, '', '2026-03-07', 1, 1),
-(29, 32, 1, '', '2026-03-07', 1, 1),
-(30, 33, 1, '', '2026-03-07', 1, 1),
-(31, 34, 1, '', '2026-03-07', 1, 1),
-(32, 35, 1, '', '2026-03-07', 1, 1),
-(33, 36, 3, 'colora 223', '2026-03-07', 1, 1),
-(34, 37, 3, 'colora 223', '2026-03-07', 1, 1);
+INSERT INTO `orders` (`id`, `customerId`, `carType`, `modelCar`, `orderDate`, `employeeId`, `statusId`, `license_plate`) VALUES
+(36, 39, 1, 'เวฟ110', '2026-03-08', 1, 4, 'กข1234'),
+(44, 47, 1, 'camry', '2026-03-09', 1, 2, 'กข1234fffcz'),
+(45, 48, 1, 'camry', '2026-03-09', 1, 4, 'กข1234fffczdadsada'),
+(46, 49, 1, 'camry', '2026-03-09', 1, 3, 'กข1234fffczdadsada'),
+(47, 50, 6, 'mt5', '2026-03-09', 1, 1, 'คคค888');
 
 -- --------------------------------------------------------
 
@@ -183,48 +174,13 @@ CREATE TABLE `orders_detail` (
 --
 
 INSERT INTO `orders_detail` (`id`, `serviceTypeid`, `orderId`) VALUES
-(9, '0001', 24),
-(10, '0003', 24),
-(11, '0001', 25),
-(12, '0003', 25),
-(13, '0001', 26),
-(14, '0003', 26),
-(15, '0009', 27),
-(16, '0015', 27),
-(17, '0017', 27),
-(18, '0019', 27),
-(19, '0009', 28),
-(20, '0015', 28),
-(21, '0017', 28),
-(22, '0019', 28),
-(23, '0009', 29),
-(24, '0015', 29),
-(25, '0017', 29),
-(26, '0019', 29),
-(27, '0009', 30),
-(28, '0015', 30),
-(29, '0017', 30),
-(30, '0019', 30),
-(31, '0009', 31),
-(32, '0015', 31),
-(33, '0017', 31),
-(34, '0019', 31),
-(35, '0009', 32),
-(36, '0015', 32),
-(37, '0017', 32),
-(38, '0019', 32),
-(39, '0006', 33),
-(40, '0007', 33),
-(41, '0008', 33),
-(42, '0011', 33),
-(43, '0013', 33),
-(44, '0014', 33),
-(45, '0006', 34),
-(46, '0007', 34),
-(47, '0008', 34),
-(48, '0011', 34),
-(49, '0013', 34),
-(50, '0014', 34);
+(52, '0011', 36),
+(72, '0002', 44),
+(73, '0020', 44),
+(74, '0005', 45),
+(75, '21', 46),
+(76, '0001', 47),
+(77, '21', 47);
 
 -- --------------------------------------------------------
 
@@ -245,12 +201,11 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`id`, `orderId`, `amount`, `payMethod`, `payDate`) VALUES
-(1, 28, 0.00, 1, '2026-03-07'),
-(2, 29, 0.00, 1, '2026-03-07'),
-(3, 30, 0.00, 1, '2026-03-07'),
-(4, 31, 0.00, 1, '2026-03-07'),
-(5, 34, 6500.00, 1, '2026-03-07'),
-(6, 34, 6500.00, 2, '2026-03-07');
+(8, 36, 4500.00, 1, '2026-03-08'),
+(16, 44, 850.00, 1, '2026-03-09'),
+(17, 45, 800.00, 2, '2026-03-09'),
+(18, 46, 3500.00, 1, '2026-03-09'),
+(19, 47, 3750.00, 2, '2026-03-09');
 
 -- --------------------------------------------------------
 
@@ -310,7 +265,7 @@ CREATE TABLE `servicetype` (
 
 INSERT INTO `servicetype` (`servicetypeId`, `servicetypeName`, `servicetypePrice`) VALUES
 ('0001', 'ล้างสีดูดฝุ่น', '250'),
-('0002', 'เคลือบแก้ว', '3500'),
+('0002', 'เคลือบแก้ว', '350'),
 ('0003', 'ดูดฝุ่นภายใน', '200'),
 ('0004', 'ขัดสีรถ', '1200'),
 ('0005', 'เคลือบสี', '800'),
@@ -328,7 +283,8 @@ INSERT INTO `servicetype` (`servicetypeId`, `servicetypeName`, `servicetypePrice
 ('0017', 'ซักพรมภายในรถ', '600'),
 ('0018', 'ซักเบาะผ้า', '700'),
 ('0019', 'ทำความสะอาดคอนโซล', '300'),
-('0020', 'เคลือบไฟหน้า', '500');
+('0020', 'เคลือบไฟหน้า', '500'),
+('21', 'เคลือบกระเพาะ', '3500');
 
 -- --------------------------------------------------------
 
@@ -455,7 +411,7 @@ ALTER TABLE `type_car`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -467,19 +423,19 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `orders_detail`
 --
 ALTER TABLE `orders_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `payment_method`

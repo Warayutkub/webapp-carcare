@@ -10,35 +10,28 @@ mysqli_select_db($conn, $dbName) or die("ไม่สามารถเลือ
 mysqli_query($conn, "set character_set_connection=utf8mb4");
 mysqli_query($conn, "set character_set_client=utf8mb4");
 mysqli_query($conn, "set character_set_results=utf8mb4");
-$sqlQueue = "SELECT COUNT(*) as total FROM orders WHERE statusId = 1";
+$sqlQueue = "SELECT COUNT(*) as total FROM orders WHERE statusId in (1,2,3)";
 $sqlFinish = "SELECT COUNT(*) as total FROM orders WHERE statusId = 4";
 $sqlAmount = "SELECT SUM(amount) as totalAmount FROM payment";
 
-$queue = mysqli_fetch_assoc(mysqli_query($conn,$sqlQueue));
-$finish = mysqli_fetch_assoc(mysqli_query($conn,$sqlFinish));
+$queue = mysqli_fetch_assoc(mysqli_query($conn, $sqlQueue));
+$finish = mysqli_fetch_assoc(mysqli_query($conn, $sqlFinish));
 $totalAmount = mysqli_fetch_assoc(mysqli_query($conn, $sqlAmount));
 
-    ?>
+?>
 
-<div class="bgDashboard">
-    <div class="firstBar">
-        <div class="firstBar-Layout">
-            <p>รายได้</p>
-            <?php
-            echo "<p>" . number_format($totalAmount['totalAmount']) . " บาท</p>";
-            ?>
-        </div>
-        <div class="firstBar-Layout">
-            <p>รถในคิว</p>
-            <?php
-            echo "<p>" . $queue['total'] . "</p>";
-            ?>
-        </div>
-        <div class="firstBar-Layout">
-            <p>เสร้จแล้ว</p>
-            <?php
-            echo "<p>" . $finish['total'] . "</p>";
-            ?>
-        </div>
+<div class="flex justify-center items-center gap-[10rem]  mt-10">
+    <div class="w-[10rem] bg-sky-300 shadow-md border p-4 flex flex-col gap-2 justify-center items-center rounded-md self-center ">
+
+        <p class="font-bold text-lg"> <?php echo number_format($totalAmount['totalAmount']) ?> บาท </p>
+        <p>รายได้ทั้งหมด</p>
+    </div>
+    <div class="w-[10rem] bg-sky-300 shadow-md border p-4 flex flex-col gap-2 justify-center items-center rounded-md self-center ">
+        <p class="font-bold text-lg"> <?php echo  $queue['total']  ?> </p>
+        <p>รถในคิว</p>
+    </div>
+    <div class="w-[10rem] bg-sky-300 shadow-md border p-4 flex flex-col gap-2 justify-center items-center rounded-md self-center ">
+        <p class="font-bold text-lg"> <?php echo  $finish['total'] ?> </p>
+        <p>เสร็จสิ้น</p>
     </div>
 </div>

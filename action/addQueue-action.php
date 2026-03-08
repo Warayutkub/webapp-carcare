@@ -33,7 +33,6 @@ $customerId = mysqli_insert_id($conn);
 
 
 /* เลือก employee คนแรก */
-
 $sqlEmployeeAll = "SELECT * FROM employee LIMIT 1";
 $employeeResult = mysqli_fetch_array(mysqli_query($conn,$sqlEmployeeAll));
 $employeeId = $employeeResult['id'];
@@ -43,20 +42,16 @@ $sqlStatusAll = "SELECT * FROM status";
 $statusResult = mysqli_fetch_array(mysqli_query($conn,$sqlStatusAll));
 $statusId = $statusResult['id'];
 
-
-
-
 /* เพิ่ม orders */
 
-$sqlOrder = "INSERT INTO orders(customerId,carType,modelCar,orderDate,employeeId,statusId)
-VALUES('$customerId','$carType','$modelCar',CURDATE(),'$employeeId','$statusId')";
+$sqlOrder = "INSERT INTO orders(customerId,carType,modelCar,orderDate,employeeId,statusId,license_plate)
+VALUES('$customerId','$carType','$modelCar',CURDATE(),'$employeeId','$statusId','$carPlate')";
 mysqli_query($conn,$sqlOrder);
 
 $orderId = mysqli_insert_id($conn);
 
 
-/* เพิ่ม service หลายรายการ */
-
+/* เพิ่ม service หลายรายการ */    
 foreach($serviceList as $service){
     
     $sqlDetail = "INSERT INTO orders_detail(serviceTypeid,orderId)
@@ -82,4 +77,6 @@ foreach($method as $payment){
     $sqlPayment = "INSERT INTO payment(orderId,amount,payMethod,payDate) VALUES ('$orderId','$totalAmount','$payment',CURDATE())";
     mysqli_query($conn,$sqlPayment);
 }
+
+header("Location: http://localhost/Carcare/views/queqe.php");
 ?>

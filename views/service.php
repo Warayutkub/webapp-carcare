@@ -32,9 +32,6 @@
 
     <div class="w-full px-4 px-[20rem]">
         <div class="bg-gray-300 p-2 m-2 rounded-md w-fit flex gap-4">
-            <a href="http://localhost/Carcare/main.php" class=" p-2 ">
-                Dashboard
-            </a>
             <a href="http://localhost/Carcare/views/queqe.php" class="p-2">
                 Queqe
             </a>
@@ -47,16 +44,23 @@
     <div class="bg-service px-[20rem] py-[1rem] flex ">
         <div class="service-container drop-shadow-md drop-shadow-black bg-white aspect-[16/9] w-[100rem] rounded-md p-5">
             <!-- head lable -->
-            <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-icon lucide-list">
-                    <path d="M3 5h.01" />
-                    <path d="M3 12h.01" />
-                    <path d="M3 19h.01" />
-                    <path d="M8 5h13" />
-                    <path d="M8 12h13" />
-                    <path d="M8 19h13" />
-                </svg>
-                <h1>รายการบริการ</h1>
+            <div class="flex justify-between">
+                <div class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-icon lucide-list">
+                        <path d="M3 5h.01" />
+                        <path d="M3 12h.01" />
+                        <path d="M3 19h.01" />
+                        <path d="M8 5h13" />
+                        <path d="M8 12h13" />
+                        <path d="M8 19h13" />
+                    </svg>
+                    <h1>รายการบริการ</h1>
+                </div>
+                <div>
+                    <a href="http://localhost/Carcare/views/AddService.php" class="bg-green-500 p-1 text-white rounded">
+                        เพิ่มบริการ
+                    </a>
+                </div>
             </div>
 
             <!-- card -->
@@ -66,7 +70,11 @@
                 ?>
                     <div class="bg-white rounded-lg border p-6 border border-grey-200 flex justify-between hover:bg-gray-300 transition-color duration-300 cursor-default">
                         <p class="text-gray-600 font-semibold text-lg"><?php echo $rs[1]  ?></p>
-                        <p class="text-gray-600 font-semibold bg-gray-200 rounded p-1 px-3 flex justify-center item-center">฿<?php echo $rs[2]  ?></p>
+                        <div class="flex gap-2">
+                            <p class="text-gray-600 font-semibold bg-gray-200 rounded p-1 px-3 flex justify-center item-center">฿<?php echo $rs[2]  ?></p>
+                            <p class="text-white font-semibold bg-yellow-400 rounded p-1 px-3 flex justify-center item-center cursor-pointer" onclick=" window.location.href='EditService.php?id=<?php echo $rs[0]; ?>'; ">แก้ไข</p>
+                            <p class="text-white font-semibold bg-red-400 rounded p-1 px-3 flex justify-center item-center cursor-pointer" onclick="if(confirm('คุณแน่ใจหรือว่าต้องการลบบริการนี้?')) { window.location.href='../action/delete_service.php?id=<?php echo $rs[0]; ?>'; }">ลบ</p>
+                        </div>
                     </div>
                 <?php
                 }
